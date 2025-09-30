@@ -15,7 +15,7 @@ class Grass:
 
 class Boy:
     def __init__(self):
-        self.x, self.y = random.randint(3, 100), 90
+        self.x, self.y = random.randint(3, 200), 90
         self.frame = random.randint(0, 7)
         self.image = load_image('run_animation.png')
 
@@ -40,6 +40,16 @@ class Zombie:
         frame_width = self.image.w // 10
         frame_height = self.image.h
         self.image.clip_draw(self.frame * frame_width, 0, frame_width, frame_height, self.x, self.y, frame_width // 2, frame_height // 2)
+
+class Ball21:
+    def __init__(self):
+        self.x, self.y = random.randint(3, 600), 599
+
+    def update(self):
+        pass
+
+    def draw(self):
+        self.image.clip_darw(0, 0, 21,  21, self.x, self.y)
 
 def handle_events():
     global running

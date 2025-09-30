@@ -44,12 +44,13 @@ class Zombie:
 class Ball21:
     def __init__(self):
         self.x, self.y = random.randint(3, 600), 599
+        self.image = load_image('ball21x21.png')
 
     def update(self):
         pass
 
     def draw(self):
-        self.image.clip_darw(0, 0, 21,  21, self.x, self.y)
+        self.image.clip_draw(0, 0, 21,  21, self.x, self.y)
 
 def handle_events():
     global running
@@ -76,6 +77,9 @@ def reset_world():
 
     zombie = Zombie()
     world.append(zombie)
+
+    ball21 = [Ball21() for _ in range(20)]
+    world += ball21
 
 def update_world():
     for game_object in world:

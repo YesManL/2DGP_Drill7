@@ -43,7 +43,7 @@ class Zombie:
 
 class Ball:
     def __init__(self):
-        self.x, self.y = random.randint(3, 600), 599
+        self.x, self.y = random.randint(3, 796), 599
         self.frame = 0
         self.image_type = random.randint(0, 1)
         if self.image_type == 0:

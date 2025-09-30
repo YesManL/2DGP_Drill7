@@ -49,7 +49,8 @@ class Ball21:
 
     def update(self):
         self.frame = (self.frame + 1) % 1
-        self.y -= random.randint(5, 10)
+        if self.y > 70:
+            self.y -= random.randint(5, 20)
 
     def draw(self):
         self.image.clip_draw(self.frame * 100, 0, 21,  21, self.x, self.y)
